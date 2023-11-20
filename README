@@ -1,0 +1,25 @@
+ISA Project
+DHCP Communication Monitoring
+Jakub Sychra
+Academic Year 23/24
+
+Creation 6.10.2023
+Last Change 20.11.2023
+
+## Description
+The dhcp-stats program monitors the DHCP traffic on the device and informs the user about the allocated addresses within the user specified ranges using either standart output or ncurses windows depending on the specified mode of the program.
+
+## Limitations
+Values 0 and 32 are excluded from possible IP address masks.
+Arguments -r and -i cant be used simultaneously.
+
+## Examples
+./dhcp-stats -r dhcp-ack-second.pcapng 192.168.1.0/27 192.168.0.0/31 192.168.0.1/29
+./dhcp-stats -i lo 192.168.1.0/27 192.168.10.0/31 172.16.32.0/22
+
+## Files 
+proj.cpp
+proj.h   
+manual.pdf
+dhcp-stats.1
+README

@@ -1,0 +1,31 @@
+.TH DHCP-STATS 1
+.SH NAME
+dhcp-stats \- monitor DHCP traffic on specified prefixes
+.SH SYNOPSIS
+.B dhcp-stats
+\fB\-i\fR <\fIDEVICE\fR>
+.IR prefix ...
+
+.B dhcp-stats
+\fB\-r\fR <\fIFILE\fR>
+.IR prefix ...
+.SH DESCRIPTION
+.B dhcp-stats
+is a network traffic monitoring device. It can operate in either a listening mode or reading mode. 
+It shows all the provided prefixes by the users and their detailed information. 
+Monitored details are allocated addresses, utilization, maximum number of devices and current amount of devices on corresponding prefix.
+When utilization rises over 50 % the program notifies the user by printing this information to syslog and to the standard output.
+
+When in listening mode, the program monitors the user specified device and in read mode it parses the user defined pcap file.
+
+.SH OPTIONS
+.TP
+.BR \-i <\fIDEVICE\fR>
+Sets the program mode to listening and specifies the device on which it monitors the traffic.
+
+.TP
+.BR \-r <\fIFILE\fR>
+Sets the program mode to reading and specifies the file to be read.
+
+.SH AUTHORS
+This program was authored by Jakub Sychra <xsychr06@vutbr.cz> for ISA Project 2 DHCP Monitoring. 
